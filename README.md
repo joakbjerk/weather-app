@@ -10,8 +10,15 @@ The app lets you sort and filter the weather data by city name, temperature, rai
 
 ```
 npm install
+```
+
+### To start the dev server
+
+```
 npm start
 ```
+
+The webpack devserver will open up at localhost:8080.
 
 ### Build for production:
 
