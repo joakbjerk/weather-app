@@ -171,7 +171,7 @@ class WeatherData extends Component {
         </HeaderPortal>
         <section className={`filter-menu ${isFilterMenuOpen ? 'open' : ''}`}>
           <Select name={sortOptions.name} options={sortOptions.options} onChangeHandler={this.changeSortType} />
-          <div className="filter-groups-wrapper r">
+          <div className="filter-groups-wrapper">
             <FilterGroup
               category={'temperature'}
               legend={filterOptions.temperature.legend}
