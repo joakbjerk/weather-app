@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //Components;
-import WeatherList from './components/WeatherList';
+import WeatherData from './components/WeatherData';
 
 const renderTarget = document.querySelector('#app');
 
-ReactDOM.render(<WeatherList />, renderTarget);
+ReactDOM.render(<WeatherData />, renderTarget);

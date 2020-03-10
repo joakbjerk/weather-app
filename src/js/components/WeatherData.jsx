@@ -21,7 +21,7 @@ import {
   toponymSearchApiEndpoint
 } from '../constants/apiEndpoints';
 
-class WeatherList extends Component {
+class WeatherData extends Component {
   state = {
     weatherData: [],
     isFetchingData: true,
@@ -201,4 +201,4 @@ class WeatherList extends Component {
   }
 }
 
-export default WeatherList;
+export default WeatherData;
