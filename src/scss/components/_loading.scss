@@ -1,0 +1,32 @@
+.loading-text {
+  height: 1.5rem;
+  width: 80%;
+  margin-bottom: rem(10px);
+  background-color: $loading-background-color;
+  display: block;
+}
+
+.loading-title {
+  height: 2rem;
+  width: 40%;
+  margin-bottom: rem(10px);
+  background-color: $loading-background-color;
+  display: block;
+}
+
+.loading {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    display: block;
+    background-color: $loading-color;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    animation: 1.5s loading ease-in-out infinite;
+  }
+}

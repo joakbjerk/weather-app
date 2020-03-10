@@ -1,0 +1,42 @@
+@import './variables/variables';
+@import './functions/functions';
+@import './mixins/mixins';
+@import './animations/animations';
+//Components;
+@import './components/header';
+@import './components/footer';
+@import './components/filter-menu';
+@import './components/filters';
+@import './components/sort';
+@import './components/weather-card';
+@import './components/loading';
+
+//Base styles;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $white;
+  font-family: $main-font;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font;
+}
+
+main {
+  flex-grow: 1;
+  position: relative;
+  padding: rem(20px) 0;
+}

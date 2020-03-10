@@ -1,0 +1,16 @@
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem($size) {
+  $unitless-size: strip-unit($size);
+  $remSize: $unitless-size / 16;
+  @return #{$remSize}rem;
+}
+
+@function set-grid-item-width($itemsPerRow, $gutterSize) {
+  $edgePixelFailSafe: 0.05px;
+  $gutterAmount: $itemsPerRow - 1;
+  $totalGutterSize: $gutterAmount * $gutterSize + $edgePixelFailSafe;
+  @return calc((100% / #{$itemsPerRow}) - (#{$totalGutterSize} / #{$itemsPerRow}));
+}

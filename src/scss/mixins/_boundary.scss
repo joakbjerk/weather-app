@@ -1,0 +1,8 @@
+@mixin wrapper-boundary($top-padding: 0, $bottom-padding: 0) {
+  margin: 0 auto;
+  max-width: $page-max-width;
+
+  @include smaller-than($page-max-width + ($page-side-padding * 2)) {
+    padding: $top-padding $page-side-padding $bottom-padding;
+  }
+}

@@ -1,0 +1,26 @@
+.sort-label {
+  display: flex;
+  flex-flow: column;
+
+  font-family: $title-font;
+
+  @include on-tablet {
+    color: $white;
+    margin-right: rem(16px);
+  }
+
+  @include on-mobile {
+    margin-bottom: rem(20px);
+  }
+}
+
+.sort-dropdown {
+  width: rem(200px);
+  height: rem(30px);
+  padding: 0 rem(10px);
+  border: rem(1px) solid $red;
+  border-radius: rem(2px);
+  margin-top: rem(6px);
+  font-size: 1rem;
+  cursor: pointer;
+}

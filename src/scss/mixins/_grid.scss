@@ -1,0 +1,43 @@
+@import '../functions/functions';
+@mixin grid-gutter($itemsPerRow, $margin, $direction: 'right') {
+  @if ($itemsPerRow > 3) {
+    $gutterItems: $itemsPerRow - 2;
+    $half-margin: $margin / 2;
+
+    @for $idx from 1 through $gutterItems {
+      @if ($idx==1) {
+        &:nth-child(#{$itemsPerRow}n - #{$idx}) {
+          margin-right: rem($margin);
+          margin-left: rem($half-margin);
+        }
+      } @else if($idx==$gutterItems) {
+        &:nth-child(#{$itemsPerRow}n - #{$idx}) {
+          margin-right: rem($half-margin);
+          margin-left: rem($margin);
+        }
+      } @else {
+        &:nth-child(#{$itemsPerRow}n - #{$idx}) {
+          margin-right: rem($half-margin);
+          margin-left: rem($half-margin);
+        }
+      }
+    }
+  } @else if($itemsPerRow==3) {
+    &:nth-child(3n - 1) {
+      margin-left: rem($margin);
+      margin-right: rem($margin);
+    }
+  } @else if($itemsPerRow==2) {
+    &:nth-child(2n - 1) {
+      margin-#{$direction}: rem($margin);
+    }
+  } @else {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@mixin grid($itemsPerRow, $gutterSize, $direction: 'right') {
+  width: set-grid-item-width($itemsPerRow, $gutterSize);
+  @include grid-gutter($itemsPerRow, $gutterSize, $direction);
+}

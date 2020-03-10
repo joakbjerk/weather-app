@@ -1,0 +1,70 @@
+.weather-data {
+  margin: 0 auto;
+
+  display: flex;
+  flex-flow: row wrap;
+
+  @include wrapper-boundary();
+}
+
+.weather-card {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, 0.2);
+
+  background-color: $white;
+
+  border-radius: rem(2px);
+
+  @include larger-than($tablet) {
+    @include grid(3, 20);
+  }
+
+  @include between(rem($tablet - 1px), rem($mobile + 1px)) {
+    @include grid(2, 20);
+  }
+
+  @include smaller-than($mobile) {
+    @include grid(1, 0);
+  }
+}
+
+.weather-card-title {
+  color: #040f0f;
+  margin-bottom: rem(4px);
+}
+
+.weather-card-text-row {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  transition: 0.2s ease-in-out;
+
+  &:not(:last-child) {
+    margin-bottom: 0.2rem;
+  }
+}
+
+.weather-icon {
+  margin: 0 rem(10px);
+  height: 2.5rem;
+  width: auto;
+}
+
+.weather-card-rain {
+  color: hsl(0, 0%, 45%);
+}
+
+.weather-card-wind {
+  color: $black;
+}
+
+.negative-temperature {
+  color: $light-blue;
+}
+
+.positive-temperature {
+  color: $light-red;
+}

@@ -1,0 +1,42 @@
+footer {
+  padding: rem(40px) 0;
+
+  background-color: $grey;
+
+  @include on-tablet {
+    padding: rem(20px) 0;
+  }
+}
+
+.footer-wrapper {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  @include wrapper-boundary();
+
+  @include on-tablet() {
+    justify-content: space-between;
+  }
+}
+
+.footer-link {
+  font-family: $title-font;
+  color: $red;
+  text-decoration: none;
+
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    filter: brightness(1.4);
+  }
+
+  @include on-tablet {
+    width: 100%;
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(16px);
+    }
+  }
+}

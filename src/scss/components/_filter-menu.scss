@@ -1,0 +1,49 @@
+.filter-menu {
+  margin: 0 auto rem(40px);
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  overflow-y: hidden;
+
+  transition: 0.2s ease-in-out;
+  transition-property: padding, visibility, height;
+
+  @include wrapper-boundary;
+
+  @include on-tablet {
+    position: absolute;
+
+    background-color: $dark-blue;
+    border-top: rem(1px) solid $red;
+
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    //Transitioned Properties;
+    visibility: hidden;
+    height: 0;
+    padding: 0 rem(20px);
+
+    &.open {
+      visibility: visible;
+      padding: rem(20px) rem(20px) rem(30px);
+      height: auto;
+    }
+  }
+}
+
+.filter-groups-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+
+  margin-bottom: rem(20px);
+
+  @include on-tablet {
+    flex-flow: column;
+  }
+}

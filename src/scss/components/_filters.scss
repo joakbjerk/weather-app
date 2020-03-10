@@ -1,0 +1,47 @@
+.filter-group-label {
+  font-family: $title-font;
+
+  text-decoration: underline $red;
+
+  @include on-tablet {
+    color: $white;
+  }
+}
+
+.filter-group {
+  padding: rem(10px) rem(20px);
+  border: none;
+
+  @include on-mobile() {
+    padding-left: 0;
+  }
+}
+
+.filter-label {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  cursor: pointer;
+
+  @include on-tablet() {
+    color: $white;
+  }
+
+  &:not(:last-child) {
+    margin-right: rem(14px);
+  }
+}
+
+.filter-checkbox {
+  $dimensions: rem(18px);
+  width: $dimensions;
+  height: $dimensions;
+
+  margin-right: rem(4px);
+  cursor: pointer;
+}
+
+.no-data-found-message {
+  font-size: rem(28px);
+  margin: rem(60px) auto 0;
+}
