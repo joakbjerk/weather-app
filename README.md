@@ -1,4 +1,4 @@
-# Weather App
+# React Vær-applikasjon.
 
 Dette er en liten react applikasjon som henter ut gjeldene værdate for et sett med utvalgte byer,
 som man finner i "src/js/constants/cities.js". Det er bare å legge til eller fjerne byer om ønskelig.
