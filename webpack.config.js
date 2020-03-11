@@ -42,6 +42,7 @@ module.exports = env => ({
   devServer: {
     open: true,
     writeToDisk: true,
-    contentBase: distPath
+    contentBase: distPath,
+    port: '8080'
   }
 });
