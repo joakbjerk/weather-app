@@ -1,15 +1,13 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-class WeatherCardLoading extends PureComponent {
-  render() {
-    return (
-      <article className="weather-card">
-        <span role="presentation" className="loading loading-title"></span>
-        <span role="presentation" className="loading loading-text"></span>
-        <span role="presentation" className="loading loading-text"></span>
-      </article>
-    );
-  }
-}
+const WeatherCardLoading = () => {
+  return (
+    <article className="weather-card">
+      <span role="presentation" className="loading loading-title"></span>
+      <span role="presentation" className="loading loading-text"></span>
+      <span role="presentation" className="loading loading-text"></span>
+    </article>
+  );
+};
 
 export default WeatherCardLoading;
