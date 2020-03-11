@@ -5,6 +5,7 @@ som man finner i "src/js/constants/cities.js". Det er bare å legge til eller fj
 
 Applikasjonen lar deg filtrere og sortere etter bynavn, temperatur, vind og regnforhold.
 
+En fungerende versjon av produksjonsbygget kan man finne her: https://joakbjerk-weather-app-3bc0d7.netlify.com/
 
 ## Bruk
 
@@ -18,7 +19,6 @@ Deretter installer de nødvendige node modulene med:
 npm install
 ```
 
-
 ### Start utviklingsserveren:
 
 Applikasjonen bruker webpack-devserver som utviklingsserver.
@@ -31,7 +31,6 @@ npm start
 
 Deretter vil serveren åpnes automatisk på localhost:8080.
 
-
 ### Bygg for produksjon:
 
 For å gjøre koden produksjonsklar kjør:
@@ -39,7 +38,6 @@ For å gjøre koden produksjonsklar kjør:
 ```
 npm run build:prod
 ```
-
 
 ### Bygg for utvikling:
 
