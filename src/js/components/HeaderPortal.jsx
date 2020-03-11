@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component, Children } from 'react';
+import { createPortal } from 'react-dom';
 const pageHeader = document.querySelector('.header-wrapper');
 
 class HeaderPortal extends Component {
@@ -10,13 +10,15 @@ class HeaderPortal extends Component {
   }
 
   componentWillUnmount() {
-    const filterMenuButton = document.querySelector('#menu-button');
-    pageHeader.removeChild(filterMenuButton);
-    this.containerElement = null;
+    Children.toArray(this.props.children).forEach(child => {
+      const childNode = child._owner.firstEffect.stateNode;
+      pageHeader.removeChild(childNode);
+    });
+    containerElement = null;
   }
 
   render() {
-    return ReactDOM.createPortal(this.props.children, this.containerElement);
+    return createPortal(this.props.children, this.containerElement);
   }
 }
 
