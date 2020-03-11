@@ -88,8 +88,8 @@ class WeatherData extends Component {
 
   getSortMethod = sortType => {
     const sortMethod = {
-      asc: (cityA, cityB) => cityA.name.localeCompare(cityB.name),
-      desc: (cityA, cityB) => cityB.name.localeCompare(cityA.name),
+      asc: (cityA, cityB) => cityA.name.localeCompare(cityB.name, 'nb'),
+      desc: (cityA, cityB) => cityB.name.localeCompare(cityA.name, 'nb'),
       warmest: (cityA, cityB) => (parseFloat(cityA.temperature) < parseFloat(cityB.temperature) ? 1 : -1),
       coldest: (cityA, cityB) => (parseFloat(cityA.temperature) > parseFloat(cityB.temperature) ? 1 : -1),
       rainy: (cityA, cityB) => (parseFloat(cityA.rain.value) < parseFloat(cityB.rain.value) ? 1 : -1),
