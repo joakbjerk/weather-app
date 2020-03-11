@@ -18,6 +18,8 @@
     background-color: $dark-blue;
     border-top: rem(1px) solid $red;
 
+    box-shadow: 0 rem(4px) rem(6px) 0 hsla(0, 0%, 0%, 0.4);
+
     z-index: 100;
     top: 0;
     left: 0;
