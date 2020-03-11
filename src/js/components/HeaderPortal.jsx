@@ -10,7 +10,8 @@ class HeaderPortal extends Component {
   }
 
   componentWillUnmount() {
-    this.containerElement.appendChild(this.props.children);
+    const filterMenuButton = document.querySelector('#menu-button');
+    pageHeader.removeChild(filterMenuButton);
     this.containerElement = null;
   }
 
