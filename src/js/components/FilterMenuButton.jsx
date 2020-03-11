@@ -1,29 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class FilterMenuButton extends Component {
-  state = {
-    isOpen: false
+const FilterMenuButton = ({ clickHandler }) => {
+  const [isOpen, openMenu] = useState(false);
+
+  const onClick = () => {
+    const isCurrentlyOpen = !isOpen;
+    clickHandler(isCurrentlyOpen);
+    openMenu(isCurrentlyOpen);
   };
 
-  onClick = () => {
-    const { clickHandler } = this.props;
-    const isOpen = !this.state.isOpen;
-    clickHandler(isOpen);
-    this.setState({ isOpen: isOpen });
-  };
-
-  render() {
-    const { isOpen } = this.state;
-
-    return (
-      <button id="menu-button" className={isOpen ? 'open' : ''} aria-labelledby="menu-label" onClick={this.onClick}>
-        <span id="menu-bar-1"></span>
-        <span id="menu-bar-2"></span>
-        <span id="menu-bar-3"></span>
-        <p id="menu-label">Filter</p>
-      </button>
-    );
-  }
-}
+  return (
+    <button id="menu-button" className={isOpen ? 'open' : ''} aria-labelledby="menu-label" onClick={onClick}>
+      <span id="menu-bar-1"></span>
+      <span id="menu-bar-2"></span>
+      <span id="menu-bar-3"></span>
+      <p id="menu-label">Filter</p>
+    </button>
+  );
+};
 
 export default FilterMenuButton;
