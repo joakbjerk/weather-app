@@ -76,6 +76,8 @@ class WeatherData extends Component {
 
   changeSortType = event => this.setState({ sortType: event.target.value });
 
+  toggleFilterMenu = isFilterMenuOpen => this.setState({ isFilterMenuOpen });
+
   toggleFilter = (category, value) => {
     const { filters } = this.state;
 
@@ -83,8 +85,6 @@ class WeatherData extends Component {
 
     this.setState({ filters });
   };
-
-  toggleFilterMenu = isFilterMenuOpen => this.setState({ isFilterMenuOpen });
 
   getSortMethod = sortType => {
     const sortMethod = {
@@ -101,24 +101,6 @@ class WeatherData extends Component {
     return sortMethod[sortType];
   };
 
-  filterWeatherData = city => {
-    const { filters } = this.state;
-    const activeFilters = Object.keys(filters);
-    const meetsFilterCriterias = true;
-
-    if (!activeFilters.length) return true;
-
-    for (const category of activeFilters) {
-      const filterValue = filters[category];
-      const filterBy = this.getFilterMethod(filterValue);
-      const doesFilterMeetCriteria = filterBy(city);
-
-      if (!doesFilterMeetCriteria) return false;
-    }
-
-    return meetsFilterCriterias;
-  };
-
   getFilterMethod = method => {
     const filterMethods = {
       warm: city => parseFloat(city.temperature) > 0,
@@ -130,6 +112,24 @@ class WeatherData extends Component {
     };
 
     return filterMethods[method];
+  };
+
+  filterWeatherData = city => {
+    const { filters } = this.state;
+    const activeFilters = Object.keys(filters);
+    const cityMeetsAllFilterCriterias = true;
+
+    if (!activeFilters.length) return true;
+
+    for (const category of activeFilters) {
+      const filterValue = filters[category];
+      const filterBy = this.getFilterMethod(filterValue);
+      const doCityMeetFilterCriteria = filterBy(city);
+
+      if (!doCityMeetFilterCriteria) return false;
+    }
+
+    return cityMeetsAllFilterCriterias;
   };
 
   getWeatherCardsMarkup = () => {
